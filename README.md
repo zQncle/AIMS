@@ -5,7 +5,7 @@
 [![Status](https://img.shields.io/badge/Status-Research-orange.svg)]()
 
 ## 📖 Overview
-This repository contains the source code for an **AI-driven metabolomics analysis framework** designed for high-precision lung cancer (LCa) screening. 
+This repository (**AIMS**) contains the source code for an **AI-driven metabolomics analysis framework** designed for high-precision lung cancer (LCa) screening.
 
 Unlike conventional pipelines, this project integrates **physics-informed signal processing** with machine learning to reconstruct high-fidelity metabolic profiles from raw mass spectrometry (LC-MS) data. It addresses common challenges such as instrumental drift, isotopic interference, and high-dimensional noise.
 
@@ -24,22 +24,20 @@ Unlike conventional pipelines, this project integrates **physics-informed signal
 * **Biomarker Discovery**: Feature selection using **Random Forest-based Importance Screening** (Top 500 features).
 * **Clinical Classifier**: An **XGBoost** model optimized via 5-fold stratified cross-validation, achieving robust performance (AUC > 0.99) in both internal and external validation cohorts.
 
-## 🛠️ Workflow
+## 📂 Repository Structure
 
-The pipeline is organized into three main phases:
+The codebase is organized into two main modules:
 
-1.  **Phase I: Data Processing & Calibration**
-    * Raw `.mzML` parsing -> Peak picking -> RT & IS filtering -> Mass calibration.
-2.  **Phase II: Feature Extraction**
-    * Isotopic pattern recognition (Greedy Blockout) -> Normalization (to IS) -> Sample aggregation.
-3.  **Phase III: Machine Learning**
-    * Feature alignment -> Matrix generation -> RF screening -> XGBoost training & evaluation.
-
-## 📦 Installation & Requirements
-
-```bash
-# Clone the repository
-git clone [https://github.com/YourUsername/Your-Repo-Name.git](https://github.com/YourUsername/Your-Repo-Name.git)
-
-# Install dependencies
-pip install -r requirements.txt
+```text
+AIMS/
+├── 01_Preprocessing/       # Phase I & II: Signal Processing & Feature Extraction
+│   ├── step1_peak_picking.py     # Raw data processing & Calibration
+│   ├── step2_feature_extraction.py # Greedy Blockout & Matrix Generation
+│   └── ...
+│
+├── 02_Modeling/            # Phase III: Machine Learning & Evaluation
+│   ├── step3_biomarker_screening.py # Random Forest Feature Selection
+│   ├── step4_model_training.py      # XGBoost Classification & CV
+│   └── ...
+│
+└── README.md
