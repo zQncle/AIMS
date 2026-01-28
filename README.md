@@ -37,10 +37,10 @@ AIMS/
 │   ├── 02_is_quality_control.py      # Internal Standard (IS) filtering
 │   ├── 03_mass_calibration.py        # Global multiplicative mass calibration
 │   ├── 04_feature_extraction.py      # Greedy Isotopic Blockout algorithm
-│   └── 05_sample_aggregation.py      # Multi-frame merging & Occupancy filtering
+│   ├── 05_sample_aggregation.py      # Multi-frame merging & Occupancy filtering
+│   └── 06_rf_feature_selection.py    # Random Forest for Biomarker Discovery
 │
 ├── 02_Modeling/                    # Phase III: AI Modeling & Inference
-│   ├── 06_rf_feature_selection.py    # Random Forest for Biomarker Discovery
 │   ├── 07_model_training_cv.py       # XGBoost Training (5-Fold CV)
 │   └── 08_model_inference.py         # Inference script for new samples
 │
