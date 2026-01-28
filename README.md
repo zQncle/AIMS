@@ -3,7 +3,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Status](https://img.shields.io/badge/Status-Research-orange.svg)]()
-<img width="3971" height="2780" alt="图片2" src="https://github.com/user-attachments/assets/b3518ac3-37ca-48a4-b689-46537828cfac" />
+
+<img width="100%" alt="Workflow Overview" src="https://github.com/user-attachments/assets/b3518ac3-37ca-48a4-b689-46537828cfac" />
 
 ## 📖 Overview
 This repository (**AIMS**) contains the source code for an **AI-driven metabolomics analysis framework** designed for high-precision lung cancer (LCa) screening.
@@ -27,18 +28,23 @@ Unlike conventional pipelines, this project integrates **physics-informed signal
 
 ## 📂 Repository Structure
 
-The codebase is organized into two main modules:
+The codebase is organized into two main modules containing 8 sequential steps:
 
 ```text
 AIMS/
-├── 01_Preprocessing/       # Phase I & II: Signal Processing & Feature Extraction
-│   ├── step1_peak_picking.py     # Raw data processing & Calibration
-│   ├── step2_feature_extraction.py # Greedy Blockout & Matrix Generation
-│   └── ...
+├── 01_Preprocessing/               # Phase I & II: Signal Processing
+│   ├── 01_physics_peak_picking.py    # Raw .mzML processing & Physics-based filtering
+│   ├── 02_is_quality_control.py      # Internal Standard (IS) filtering
+│   ├── 03_mass_calibration.py        # Global multiplicative mass calibration
+│   ├── 04_feature_extraction.py      # Greedy Isotopic Blockout algorithm
+│   └── 05_sample_aggregation.py      # Multi-frame merging & Occupancy filtering
 │
-├── 02_Modeling/            # Phase III: Machine Learning & Evaluation
-│   ├── step3_biomarker_screening.py # Random Forest Feature Selection
-│   ├── step4_model_training.py      # XGBoost Classification & CV
-│   └── ...
+├── 02_Modeling/                    # Phase III: AI Modeling & Inference
+│   ├── 06_rf_feature_selection.py    # Random Forest for Biomarker Discovery
+│   ├── 07_model_training_cv.py       # XGBoost Training (5-Fold CV)
+│   └── 08_model_inference.py         # Inference script for new samples
 │
+├── train_healthy/                  # Training Data (Healthy Controls)
+├── train_cancer/                   # Training Data (Lung Cancer Patients)
+├── test_data/                      # Inference Data (New Samples)
 └── README.md
