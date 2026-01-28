@@ -21,7 +21,7 @@ from tqdm import tqdm
 
 # ================= Configuration =================
 # Path to raw mzML files
-DATA_DIR = "/mnt/vos-9tc8cgur/PythonProgram/DeepRMSD-Vina_Optimization-master/lung_cancer/mzML_0112/selected"
+DATA_DIR = "input_files"
 # Output directory for processed pickle files
 OUTPUT_DIR = "./processed_peaks_step1"
 
