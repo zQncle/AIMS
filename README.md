@@ -3,6 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Status](https://img.shields.io/badge/Status-Research-orange.svg)]()
+<img width="3971" height="2780" alt="图片2" src="https://github.com/user-attachments/assets/b3518ac3-37ca-48a4-b689-46537828cfac" />
 
 ## 📖 Overview
 This repository (**AIMS**) contains the source code for an **AI-driven metabolomics analysis framework** designed for high-precision lung cancer (LCa) screening.
